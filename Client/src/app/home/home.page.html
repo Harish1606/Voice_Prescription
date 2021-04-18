@@ -1,0 +1,71 @@
+<ion-menu side="start" content-id="main-content">
+  <ion-header>
+    <ion-toolbar color="tertiary">
+      <ion-title color="light">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle>
+      <ion-item>
+        <ion-icon color="dark" name="moon-outline" slot="start"></ion-icon>
+        <ion-label>Dark mode</ion-label>
+        <ion-toggle (ionChange)="toggleTheme($event)"></ion-toggle>
+      </ion-item>
+      <ion-item (click)="goToProfile()">
+        <ion-icon color="dark" name="person-outline" slot="start"></ion-icon>
+        <ion-label>Profile</ion-label>
+      </ion-item>
+      <ion-item (click)="goToTemplate()">
+        <ion-icon color="dark" name="reader-outline" slot="start"></ion-icon>
+        <ion-label>Template</ion-label>
+      </ion-item>
+      <ion-item (click)="goToSecurityPin()">
+        <ion-icon color="dark" name="key-outline" slot="start"></ion-icon>
+        <ion-label>Security Pin</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="dark" name="information-circle-outline" slot="start"></ion-icon>
+        <ion-label>About</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon color="dark" name="newspaper-outline" slot="start"></ion-icon>
+        <ion-label>Feedback</ion-label>
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon color="dark" name="log-out-outline" slot="start"></ion-icon>
+        <ion-label>Logout</ion-label>
+      </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToSearch()"><ion-icon name="search" color="light" style="font-size:23px;"></ion-icon></ion-button>
+      <ion-button><ion-icon name="folder-outline" color="light" style="font-size: 23px;"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title color="light" class="bold">IonicVoice</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-slides [options]="sliderOptions" pager style="margin-top: 1.8rem;">
+    <ion-slide *ngFor="let slide of sliderImages">
+      <img [src]="slide+'.jpg'" alt="images">
+    </ion-slide>
+  </ion-slides>
+
+  <div class="center">
+    <ion-button shape="round" fill="outline" color="tertiary" (click)="goToVoice()">Prescription using voice</ion-button>
+    <hr>
+    <ion-button shape="round" fill="outline" color="tertiary" (click)="goToText()">Prescription using text</ion-button>
+  </div>
+</ion-content>
+</div>

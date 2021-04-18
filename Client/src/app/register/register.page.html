@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <ion-text color="light">
+        <h3>Register</h3>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col style="text-align: center; margin-top: 30px;">
+    <ion-card class="border">
+      <ion-card-header color="tertiary">
+        <ion-avatar style=" display: block; margin-left:auto;margin-right: auto; width: 30%; height: 60%;">
+          <img src="https://ucarecdn.com/{{image}}/-/scale_crop/150x150/center/"><img>
+        </ion-avatar>
+      </ion-card-header>
+    <ion-card-content>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">
+          Email
+        </ion-label>
+        <ion-input name="email" type="email" [(ngModel)]="user.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z-_.]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Name
+      </ion-label>
+      <ion-input name="username" type="text" [(ngModel)]="user.username" #username="ngModel" required></ion-input>
+    </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Qualification
+        </ion-label>
+        <ion-input name="qualification" type="text" [(ngModel)]="user.qualification" #qualification="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Address
+        </ion-label>
+        <ion-input name="address" type="text" [(ngModel)]="user.address" #address="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Registration number
+        </ion-label>
+        <ion-input name="regno" type="number" [(ngModel)]="user.regno" #regno="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Mobile No
+        </ion-label>
+        <ion-input name="mobileno" type="number" [(ngModel)]="user.mobileno" #mobileno="ngModel" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Hospital Name
+        </ion-label>
+        <ion-input name="hospitalname" type="text" [(ngModel)]="user.hospitalname" #hospitalname="ngModel" required></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Password
+      </ion-label>
+      <ion-input name="password" type="password" [(ngModel)]="user.password" #password="ngModel" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">
+        Confirm Password
+      </ion-label>
+      <ion-input name="cpassword" type="password" [(ngModel)]="user.cpassword" #cpassword="ngModel" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-text color="dark">
+    <h2>Already have an account? <a (click)="goToLogin()">Login</a></h2>
+  </ion-text>
+  <br>
+  <ion-button [disabled]="registerForm.form.invalid" expand="block" color="tertiary" type="submit"><ion-text color="light">Submit</ion-text></ion-button>
+</form>
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+</ion-content>

@@ -1,0 +1,8 @@
+{
+  "name": "Voice_Prescription",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

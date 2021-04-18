@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon color="light" style="font-size: 28px; vertical-align: middle; display: inline-block;" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button *ngIf="theme!=user.theme" expand="block" fill="clear" color="light" (click)="saveTheme()">save</ion-button>
+    </ion-buttons>
+    <ion-title color="light" style="text-align: start;">
+      <h3>Template</h3>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p style="text-align: center;">Date</p>
+  <h1 style="text-align:center;">{{user.hospitalname}}</h1>
+  <h2 style="text-align: center;">Dr.{{user.username}}</h2>
+  <h3 style="text-align: center;">{{user.qualification}}</h3>
+  <h4 style="text-align: center;">{{user.address}}</h4>
+  <h4 style="text-align:center">Reg No : {{user.regno}}</h4>
+  <h4 style="text-align: center;">Contact : {{user.mobileno}}</h4>
+  <br>
+  <hr *ngIf="theme=='primary'" style="border: 2px solid blue;">
+  <hr *ngIf="theme=='secondary'" style="border: 2px solid skyblue;">
+  <hr *ngIf="theme=='success'" style="border: 2px solid green;">
+  <hr *ngIf="theme=='danger'" style="border: 2px solid red;">
+  <hr *ngIf="theme=='warning'" style="border: 2px solid yellow;">
+  <hr *ngIf="theme=='medium'" style="border: 2px solid gray;">
+  <br>
+  <br>
+  <br>
+  <div>
+      <h2 style="text-align:start;">Name :</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Email :</h2>
+  </div>
+  <div>
+      <h2 style="text-align:start;">Age :</h2>
+  </div>
+  <div>
+      <h2 style="text-align:start;">Gender :</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Symptoms :</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Diagnosis :</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Medicine :</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Advice :</h2>
+  </div>
+  <br>
+  <br>
+  <br>
+  <hr *ngIf="theme=='primary'" style="border: 2px solid blue;">
+  <hr *ngIf="theme=='secondary'" style="border: 2px solid skyblue;">
+  <hr *ngIf="theme=='success'" style="border: 2px solid green;">
+  <hr *ngIf="theme=='danger'" style="border: 2px solid red;">
+  <hr *ngIf="theme=='warning'" style="border: 2px solid yellow;">
+  <hr *ngIf="theme=='medium'" style="border: 2px solid gray;">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h2 style="text-align:start">Dr.{{user.username}}</h2>
+    <p style="text-align:start">{{user.qualification}}</p>
+    <p style="text-align:start">Reg No : {{user.regno}}</p>
+  </div>
+</ion-content>

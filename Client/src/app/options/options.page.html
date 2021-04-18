@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <ion-text color="light">
+        <h3>Options</h3>
+      </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToHome()">
+        <ion-icon name="home" color="light" style="font-size: 23px;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-button shape="round" fill="outline" color="tertiary" (click)="goToView()"><ion-icon name="eye-outline" style="font-size: 20px;"></ion-icon>&nbsp;View Prescription</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-button shape="round" fill="outline" color="tertiary" (click)="goToEdit()"><ion-icon name="create-outline" style="font-size: 20px;"></ion-icon>&nbsp;Edit Prescription</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-button shape="round" fill="outline" color="tertiary" (click)="delete_Prescription()"><ion-icon name="trash-outline" style="font-size: 20px;"></ion-icon>&nbsp;Delete Prescription</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="text-align: center;">
+        <ion-button shape="round" fill="outline" color="tertiary" (click)="share()"><ion-icon name="share-social-outline" style="font-size: 20px;"></ion-icon>&nbsp;Share Prescription</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

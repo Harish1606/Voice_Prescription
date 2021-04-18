@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1.5">
+          <div (click)="goBack()">
+            <ion-icon color="light" style="font-size: 28px; vertical-align: middle; display: inline-block;" name="arrow-back-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="10.5" style="text-align: start;">
+          <ion-text color="light" class="text">
+            Voice Prescription
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="capturedAudio.trim().length==0" style="margin: 60% 0 0 0;">
+    <ion-note color="dark" style="text-align: center;">
+      <h2 style="font-size: 30px;">Generate prescription using voice</h2>
+    </ion-note>
+  </div>
+  <ion-card *ngIf="capturedAudio.trim().length>0" style="margin-top: 40%;border: 2px solid var(--ion-color-tertiary);">
+    <ion-card-header>
+      <ion-card-title style="text-align: center;">
+        Captured Audio
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{capturedAudio}}
+    </ion-card-content>
+    <hr>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="2"></ion-col>
+        <ion-col style="text-align: center;">
+          <ion-fab-button color="danger" (click)="cancel_Prescription()">
+            <ion-icon name="close" style="font-size: 28px;" color="light"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col style="text-align: center;">
+          <ion-fab-button color="medium" (click)="addAudio()">
+            <ion-icon name="add" style="font-size: 28px;" color="light"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col style="text-align:center;">
+          <ion-fab-button color="success" (click)="generate_Prescription()">
+            <ion-icon name="send" color="light"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <ion-col size="2"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="capturedAudio.trim().length==0">
+    <ion-fab-button color="tertiary" (click)="startListening()">
+      <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1.5">
+          <div (click)="goBack()">
+            <ion-icon color="light" style="font-size: 28px; vertical-align: middle; display: inline-block;" name="arrow-back-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="10.5" style="text-align: start;">
+          <ion-text color="light" class="text">
+            Search Prescriptions
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<ion-segment style="margin-top: 8px;">
+  <ion-searchbar #search (ionChange)="searchPrescription($event)" animated></ion-searchbar>
+</ion-segment>
+
+<ion-content>
+  <div *ngIf="busy">
+    <ion-list>
+      <ion-item *ngFor="let p of Prescriptions">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3">
+              <h2>
+                <ion-skeleton-text animated style="width: 20%;"></ion-skeleton-text>
+              </h2>
+            </ion-col>
+            <ion-col>
+              <ion-label>
+                <h2><ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text></h2>
+                <p><ion-skeleton-text animated style="width: 50%;"></ion-skeleton-text></p>
+              </ion-label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div *ngIf="!busy">
+  <ion-list>
+    <ion-item *ngFor="let p of searchedPrescription">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1.5" (click)="goToView(p._id)">
+            <ion-icon color="danger" name="document-text-outline" style="font-size: 30px;"></ion-icon>
+          </ion-col>
+          <ion-col (click)="goToView(p._id)">
+            <ion-label>
+              <h2 style="font-weight: 400;">{{p.name}}</h2>
+              <p>{{p.date | date:'short'}}</p>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1.7">
+            <ion-label>
+              <ion-button fill="clear" color="success" (click)="goToEdit(p._id)"><ion-icon name="create-outline" style="font-size: 20px;"></ion-icon></ion-button>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1.7">
+            <ion-label>
+              <ion-button fill="clear" color="danger" (click)="delete_Prescription(p._id)"><ion-icon name="trash-outline" style="font-size: 20px;"></ion-icon></ion-button>
+            </ion-label>
+          </ion-col>
+          <ion-col size="1.7">
+            <ion-label>
+              <ion-button fill="clear" color="primary" (click)="share_Prescription(p._id)"><ion-icon name="share-social-outline" style="font-size: 20px;"></ion-icon></ion-button>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  </div>
+</ion-content>

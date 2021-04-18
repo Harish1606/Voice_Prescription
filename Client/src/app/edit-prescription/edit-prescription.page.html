@@ -1,0 +1,135 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <ion-text color="light">
+        <h3>Editable form</h3>
+      </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button [disabled]="textForm.form.invalid" (click)="update_Prescription()" expand="block" fill="clear" color="light" type="submit">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col style="text-align: center; margin-top: 10px;">
+      <form #textForm="ngForm">
+        <ion-text>
+          <h1 style="text-align: center;">Patient Details</h1>
+        </ion-text>
+        <hr>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Email :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="email" type="email" [(ngModel)]="Prescription.email" #email="ngModel" pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z-_.]{2,}[.]{1}[a-zA-Z]{2,}" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Name :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="name" type="text" [(ngModel)]="Prescription.name" #name="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Age :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="age" type="number" [(ngModel)]="Prescription.age" #age="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Gender :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="gender" type="text" [(ngModel)]="Prescription.gender" #gender="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Mobile No :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="mobileno" type="number" [(ngModel)]="Prescription.mobileno" #mobileno="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Symptoms :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="symptoms" type="text" [(ngModel)]="Prescription.symptoms" #symptoms="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Diagnosis :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="diagnosis" type="text" [(ngModel)]="Prescription.diagnosis" #diagnosis="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Medicine :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="prescription" type="text" [(ngModel)]="Prescription.prescription" #prescription="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="5" style="text-align: start;">
+              <ion-text>
+                <h3>Advice :</h3>
+              </ion-text>
+            </ion-col>
+            <ion-col size="7">
+              <ion-item>
+                <ion-input name="advice" type="text" [(ngModel)]="Prescription.advice" #advice="ngModel" required></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </ion-col>
+  </ion-row>
+</ion-content>

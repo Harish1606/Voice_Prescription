@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      <ion-text color="light">
+        <h3>Security Pin</h3>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: 20%;background-color: silver;">
+    <form #setForm="ngForm" (ngSubmit)="set()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item>
+           <ion-input name="t1" type="number" autofocus (ionChange)="next1()" [(ngModel)]="temp_pin.t1" #t1="ngModel" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input name="t2" type="number" #n1 (ionChange)="next2()" [(ngModel)]="temp_pin.t2" #t2="ngModel" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input name="t3" type="number" #n2 (ionChange)="next3()" [(ngModel)]="temp_pin.t3" #t3="ngModel" required></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-input name="t4" type="number" #n3 [(ngModel)]="temp_pin.t4" #t4="ngModel" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-button [disabled]="setForm.form.invalid" expand="block" color="tertiary" type="submit">OKAY</ion-button>
+  </form>
+  </ion-card>
+</ion-content>

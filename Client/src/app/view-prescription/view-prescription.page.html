@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1.5">
+          <div (click)="goBack()">
+            <ion-icon color="light" style="font-size: 28px; vertical-align: middle; display: inline-block;" name="arrow-back-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="10.5" style="text-align: start;">
+          <ion-text color="light" class="text">
+            Prescription
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p style="text-align: center;">{{Prescription.date | date:'short'}}</p>
+  <h1 style="text-align:center;">{{user.hospitalname}}</h1>
+  <h2 style="text-align: center;">Dr.{{user.username}}</h2>
+  <h3 style="text-align: center;">{{user.qualification}}</h3>
+  <h4 style="text-align: center;">{{user.address}}</h4>
+  <h4 style="text-align:center">Reg No : {{user.regno}}</h4>
+  <h4 style="text-align: center;">Contact : {{user.mobileno}}</h4>
+  <br>
+  <hr *ngIf="user.theme=='primary'" style="border: 2px solid blue;">
+  <hr *ngIf="user.theme=='secondary'" style="border: 2px solid skyblue;">
+  <hr *ngIf="user.theme=='success'" style="border: 2px solid green;">
+  <hr *ngIf="user.theme=='danger'" style="border: 2px solid red;">
+  <hr *ngIf="user.theme=='warning'" style="border: 2px solid yellow;">
+  <hr *ngIf="user.theme=='medium'" style="border: 2px solid gray;">
+  <br>
+  <br>
+  <br>
+  <div>
+      <h2 style="text-align:start;">Name : {{Prescription.name}}</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Email : {{Prescription.email}}</h2>
+  </div>
+  <div>
+      <h2 style="text-align:start;">Age : {{Prescription.age}}</h2>
+  </div>
+  <div>
+      <h2 style="text-align:start;">Gender : {{Prescription.gender}}</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Symptoms : {{Prescription.symptoms}}</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Diagnosis : {{Prescription.diagnosis}}</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Medicine : {{Prescription.prescription}}</h2>
+  </div>
+  <div>
+    <h2 style="text-align:start;">Advice : {{Prescription.advice}}</h2>
+  </div>
+  <br>
+  <br>
+  <br>
+  <hr *ngIf="user.theme=='primary'" style="border: 2px solid blue;">
+  <hr *ngIf="user.theme=='secondary'" style="border: 2px solid skyblue;">
+  <hr *ngIf="user.theme=='success'" style="border: 2px solid green;">
+  <hr *ngIf="user.theme=='danger'" style="border: 2px solid red;">
+  <hr *ngIf="user.theme=='warning'" style="border: 2px solid yellow;">
+  <hr *ngIf="user.theme=='medium'" style="border: 2px solid gray;">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div>
+    <h2 style="text-align:start">Dr.{{user.username}}</h2>
+    <p style="text-align:start">{{user.qualification}}</p>
+    <p style="text-align:start">Reg No : {{user.regno}}</p>
+  </div>
+</ion-content>

@@ -1,0 +1,194 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1.5">
+          <div (click)="goBack()">
+            <ion-icon color="light" style="font-size: 28px; vertical-align: middle; display: inline-block;" name="arrow-back-outline"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="10.5" style="text-align: start;">
+          <ion-text color="light" class="text">
+            Text Prescription
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col style="text-align: center; margin-top: 30px;">
+    <ion-card class="border">
+      <ion-card-header color="tertiary">
+        <ion-card-title>
+          <ion-text color="light">
+            Patient details
+          </ion-text>
+        </ion-card-title>
+      </ion-card-header>
+    <ion-card-content>
+      <form #textForm="ngForm" (ngSubmit)="generate_Prescription()">
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Email
+              </ion-label>
+              <ion-input name="email" type="email" [(ngModel)]="text_Prescription.email" #email="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startEmailListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Name
+              </ion-label>
+              <ion-input name="name" type="text" [(ngModel)]="text_Prescription.name" #name="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startNameListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Age
+              </ion-label>
+              <ion-input name="age" type="number" [(ngModel)]="text_Prescription.age" #age="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startAgeListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Gender
+              </ion-label>
+              <ion-input name="gender" type="text" [(ngModel)]="text_Prescription.gender" #gender="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startGenderListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Mobile No
+              </ion-label>
+              <ion-input name="mobileno" type="number" [(ngModel)]="text_Prescription.mobileno" #mobileno="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startMobileNoListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Symptoms
+              </ion-label>
+              <ion-input name="symptoms" type="text" [(ngModel)]="text_Prescription.symptoms" #symptoms="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startSymptomsListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Diagnosis
+              </ion-label>
+              <ion-input name="diagnosis" type="text" [(ngModel)]="text_Prescription.diagnosis" #diagnosis="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startDiagnosisListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>    <ion-item>
+            <ion-label position="floating">
+              Medicine
+            </ion-label>
+            <ion-input name="prescription" type="text" [(ngModel)]="text_Prescription.prescription" #prescription="ngModel" required></ion-input>
+          </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startMedicineListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">
+                Advice
+              </ion-label>
+              <ion-input name="advice" type="text" [(ngModel)]="text_Prescription.advice" #advice="ngModel" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2.5">
+            <ion-fab-button color="medium" (click)="startAdviceListening()">
+              <ion-icon name="mic-outline" style="font-size: 28px;" color="light"></ion-icon>
+            </ion-fab-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-list>
+  <br>
+  <ion-button [disabled]="textForm.form.invalid" expand="block" color="tertiary" type="submit"><ion-text color="light">Submit</ion-text></ion-button>
+</form>
+</ion-card-content>
+</ion-card>
+</ion-col>
+</ion-row>
+</ion-content>
