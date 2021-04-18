@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% block body %}
+    <p style="text-align: center;">Date : {{Prescription.date}}</p>
+    <h1 style="text-align:center;">{{user.hospitalname}}</h1>
+    <h2 style="text-align: center;">Dr.{{user.username}}</h2>
+    <h3 style="text-align: center;">{{user.qualification}}</h3>
+    <h4 style="text-align: center;">{{user.address}}</h4>
+    <h4 style="text-align:center">Reg No : {{user.regno}}</h4>
+    <h4 style="text-align: center;">Contact : {{user.mobileno}}</h4>
+    <br>
+    {% if 'primary'==user.theme %}
+        <hr style="border: 3px solid blue;">
+    {% elif 'secondary'==user.theme %}
+        <hr style="border: 3px solid skyblue;">
+    {% elif 'success'==user.theme %}
+        <hr style="border: 3px solid green;">
+    {% elif 'danger'==user.theme %}
+        <hr style="border: 3px solid red;">
+    {% elif 'warning'==user.theme %}
+        <hr style="border: 3px solid yellow;">
+    {% elif 'medium'==user.theme %}
+        <hr style="border: 3px solid gray;">        
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <div>
+        <h2 style="text-align:start;">Name : {{Prescription.name}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Email : {{Prescription.email}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Age : {{Prescription.age}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Gender : {{Prescription.gender}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Symptoms : {{Prescription.symptoms}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Diagnosis : {{Prescription.diagnosis}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Medicine : {{Prescription.prescription}}</h2>
+    </div>
+    <div>
+        <h2 style="text-align:start;">Advice : {{Prescription.advice}}</h2>
+    </div>
+    <br>
+    <br>
+    <br>
+    {% if 'primary'==user.theme %}
+        <hr style="border: 3px solid blue;">
+    {% elif 'secondary'==user.theme %}
+        <hr style="border: 3px solid skyblue;">
+    {% elif 'success'==user.theme %}
+        <hr style="border: 3px solid green;">
+    {% elif 'danger'==user.theme %}
+        <hr style="border: 3px solid red;">
+    {% elif 'warning'==user.theme %}
+        <hr style="border: 3px solid yellow;">
+    {% elif 'medium'==user.theme %}
+        <hr style="border: 3px solid gray;">        
+    {% endif %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h2 style="text-align:start">Dr.{{user.username}}</h2>
+        <p style="text-align:start">{{user.qualification}}</p>
+        <p style="text-align:start">Reg No : {{user.regno}}</p>
+    </div>
+{% endblock %}
+</html>
